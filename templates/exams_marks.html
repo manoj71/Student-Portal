@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Bootstrap JavaScript -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+<style>
+img {
+display:block;
+margin-left: auto;
+  margin-right: auto;
+}
+.anyClass {
+height:500px;
+  overflow-y: scroll;
+}
+.jumbotron{
+padding-top:10px;
+border:0px;
+height:50px;
+}
+</style>
+    <title>Exams Marks</title>
+  </head>
+  <body>
+  <!-- Logo -->
+ <div class="container-sm">
+  <img src="{% static 'images/iiitsonepat_logo_1.png' %}" class="img-fluid" alt="IIIT SONEPAT"/>
+</div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Clubs</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Lost items</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Fee Status</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Complaint/Enquiry</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</br>
+<!-- Books picture -->
+  <img src="{% static 'images/exam.jpg' %}" class="img-fluid" alt="pic"/>
+ </br>
+<!-- About Page(Jubmotron) -->
+<div class="jumbotron">
+  <p class="lead">Get updated about your examination marks,upcoming exam schedule and results.</p>
+</div>
+<!-- Links for marks,scheme and results -->
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Semester Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Semester marks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Unit Test Marks</a>
+      </li>
+     </ul>
+  </div>
+</nav>
+</br>
+<!-- Div -->
+<div class="nav flex-column anyClass">
+</div>
+<!-- Footer -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">Contacts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Email</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  </body>
+</html>

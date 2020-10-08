@@ -1,0 +1,86 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Bootstrap JavaScript -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    
+
+    <title>Complaint/Enquiry </title>
+  </head>
+  <body>
+  <!-- logo -->
+   <div class="container-sm">
+  <img src="{% static 'images/iiitsonepat_logo_1.png' %}" class="img-fluid" alt="IIIT SONEPAT"/>
+</div>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Clubs</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Lost items</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Fee Status</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Exams</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</br>
+  <div  class="container">
+   <form>
+        <div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Complain
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+    Enquiry
+  </label>
+</div>
+       <br>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Explain here:</label>
+    <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+</div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+   </form>
+   </div>
+<br> <br> <br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Contact:</button>
+  <br>
+ <button type="button" class="btn btn-success"> Academics</button>
+<button type="button" class="btn btn-danger"> Hostel and Mess</button>
+  <button type="button" class="btn btn-outline-warning"> Administrative Office</button>
+<button type="button" class="btn btn-outline-info">  Other</button>
+
+  </body>
+</html>
