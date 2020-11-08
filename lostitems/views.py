@@ -15,4 +15,8 @@ def lost_items(request):
 
     else:
         items=item.objects.all()
+<<<<<<< HEAD
         return render(request,'lost_items_section.html',{'items':items})
+=======
+        return render(request,'lost_items_section.html',{'items':items})
+>>>>>>> 68a286a713f5cad9365a6da968a5d107e185c2c7

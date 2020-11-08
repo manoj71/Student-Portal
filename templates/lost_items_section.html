@@ -80,7 +80,11 @@ td{
 <div class="container" >
   <div class="row">
     <div class="col-md-5" id="p">
+<<<<<<< HEAD
       <p style="font-weight: bold;">Post About Lost Item</p> 
+=======
+       <p style="font-weight: bold;">Post About Lost Item</p> 
+>>>>>>> 68a286a713f5cad9365a6da968a5d107e185c2c7
       <hr>
 	  <form  action="" method="POST">
       <table>
@@ -95,7 +99,11 @@ td{
       <td>Describe:</td>
       <td><input type="textarea" name="desc"></form></td>
     </tr>
+<<<<<<< HEAD
      <tr>
+=======
+	<tr>
+>>>>>>> 68a286a713f5cad9365a6da968a5d107e185c2c7
        <td>Found On:</td>
        <td><input type="date" name="found_date"></form></td>
     </tr>
@@ -115,6 +123,7 @@ td{
 	<div class="col-md-2">
 	</div>
     <div class="col-md-5" id="p1">
+<<<<<<< HEAD
       <p style="font-weight: bold;">Lost Items</p> 
       <hr>
      <ul class="nav flex-column anyClass">
@@ -124,6 +133,17 @@ td{
          <p style="color:grey">{{item.desc}}</p>
        </li><p></p>
        {% endfor %}
+=======
+     <p style="font-weight: bold;">Lost Items</p> 
+   <hr>
+  <ul class="nav flex-column anyClass">
+    {% for item in items %}
+	<li class="nav-item" style="border:solid 1px">
+      <a class="nav-link" href=/media/{{item.item_pic}} target="_blank">{{item.item_name}}</a>
+      <p style="color:grey">{{item.desc}}</p>
+    </li><p></p>
+    {% endfor %}
+>>>>>>> 68a286a713f5cad9365a6da968a5d107e185c2c7
  </div>
  </div>
  </div>
