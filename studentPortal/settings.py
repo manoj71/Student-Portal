@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lostitems.apps.LostitemsConfig',
+    'notes.apps.NotesConfig',
 ]
 
 MIDDLEWARE = [

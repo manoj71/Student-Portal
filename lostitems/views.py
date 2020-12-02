@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import item
-# Create your views here.
+# Create your views here
 def lost_items(request):
     if request.method=='POST':
         itm=item()

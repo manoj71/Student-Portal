@@ -23,6 +23,7 @@ urlpatterns = [
     path('lost/',include('lostitems.urls')),
     path('complain/',include('complain.urls')),
     path('club/',include('club.urls')),
+    path('notes/',include('notes.urls')),
     path('admin/', admin.site.urls),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
