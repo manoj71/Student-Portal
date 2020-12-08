@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Group, Groupnotices
+admin.site.register(Group)
+admin.site.register(Groupnotices)

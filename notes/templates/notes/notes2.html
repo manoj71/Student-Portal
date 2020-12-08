@@ -1,0 +1,51 @@
+{% extends 'notes/basic.html' %}
+{% block css %}
+          .col-md-3
+{
+display: inline-block;
+margin-left:-4px;
+}
+body .no-padding{
+padding-left: 0,
+padding-right: 0;
+}
+
+ {% endblock %}
+
+{% block body %}
+{% load static %}
+<div style="background-color: #004f99" class="jumbotron p-3 p-md-5 text-white rounded bg-darkblue">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 ">Notes</h1>
+          <p class="lead my-3">{{sub}}</p>
+
+        </div>
+      </div>
+<br>
+<div class="container">
+
+    <table class="table">
+  <thead style="background-color:  #1a90ff;">
+    <tr>
+      <th scope="col" style="text-align:center; color:white;">Topic</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+    {% for params,range in allProds %}
+  <tbody>
+
+        {% if params.0.notes_document %}
+    <tr>
+        <td style="background-color:  #f2f2f2">  <a href="{{ params.0.notes_document.url }}"> {{params.0.notes_name}} </a> </td>
+
+    {% endif %}
+    </tr>
+  </tbody>
+
+    {% endfor %}
+</table>
+
+
+</div>
+ {% endblock %}

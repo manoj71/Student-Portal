@@ -28,6 +28,10 @@ padding-top:10px;
 border:0px;
 height:50px;
 }
+table,tr,td{
+  border:1px solid black;
+  width: 1100px;
+}
 </style>
     <title>Exams Marks</title>
   </head>
@@ -48,16 +52,16 @@ height:50px;
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Clubs</a>
+        <a class="nav-link" href="/club/">Clubs</a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="#">Lost items</a>
+        <a class="nav-link" href="/lost/">Lost items</a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="#">Fee Status</a>
+        <a class="nav-link" href="/fee/">Fee Status</a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="#">Complaint/Enquiry</a>
+        <a class="nav-link" href="/complain/">Complaint/Enquiry</a>
       </li>
 	  <li class="nav-item">
         <a class="nav-link" href="#">Logout</a>
@@ -96,6 +100,25 @@ height:50px;
 </br>
 <!-- Div -->
 <div class="nav flex-column anyClass">
+  
+  <h4 >Name-{{student.student_name}}</h4>
+  <h4>Roll Number-{{student.roll_number}}</h4>
+  <h2 style="padding: 20px; padding-left:500px;">Marks</h2>
+  <table>
+    <tr>
+    {% for values in stud_subj.values %}
+      <td style="font-size: 20px; text-align:center;">{{values}}</td>
+    {% endfor %}
+    </tr>
+    <tr>
+    {% for values in stud_marks.values %}
+      <td style="text-align: center;">{{values}}</td>
+    {% endfor %}
+    </tr>
+  </table>
+  <p></p>
+ <a href=/media/{{student.marksheet}} download><button type="button" class="btn btn-primary" style="width:200px;">Download Marks</button></a>
+ 
 </div>
 <!-- Footer -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

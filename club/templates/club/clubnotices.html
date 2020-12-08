@@ -1,0 +1,111 @@
+{% extends 'club/basic.html' %}
+{% block css %}
+.card{
+border-style: solid;
+}
+.col-md-3
+{
+display: inline-block;
+margin-left:-4px;
+}
+.carousel-indicators .active {
+background-color: blue;
+margin-bottom: -70px;
+}
+.col-md-3 img{
+width: 185px;
+height: 200px;
+}
+body .carousel-indicator li{
+background-color: blue;
+}
+body .carousel-indicators{
+bottom: 0;
+}
+
+.card-img-top{
+          width: 340px;
+          height: 240px;
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+background-color: orange;
+}
+.carousel-control-prev,
+.carousel-control-next{
+top: auto;
+bottom: auto;
+padding-top: 80px;
+
+}
+body .no-padding{
+padding-left: 0,
+padding-right: 0;
+}
+ {% endblock %}
+{% block body %}
+{% load static %}
+<div style="background-color: #004f99" class="jumbotron p-3 p-md-5 text-white rounded bg-darkblue">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 ">Club Events</h1>
+        </div>
+      </div>
+<div class="container">
+    <!--Slideshow starts here -->
+    {% for groupnotices, range, nSlides in allProds %}
+    <br>
+
+     <div class="navbar navbar-dark bg-darkblue shadow-sm" style="background-color: #ff9933; color:white;">
+
+        <strong>{{groupnotices.0.notice_category}} Club</strong>
+     </div>
+
+    <div class="row">
+       <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+         <ul class="carousel-indicators">
+            <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+             {% for i in range %}
+            <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}" ></li>
+             {% endfor %}
+         </ul>
+            <div class="container carousel-inner no-padding">
+              <div class="carousel-item active">
+                 {% for i in groupnotices %}
+                  <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card" style="width:17rem; height:390px; border-width:thick; border-color:#999999;">
+                     {% if i.notice_image %}
+                     <img src='/media/{{i.notice_image}}' style="width:262px;"class="card-img-top" alt="...">
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="card-text">{{i.notice_date}}</p>
+                            <h5 class="card-title">{{i.notice_name}}</h5>
+                            <p class="card-text">{{i.notice_desc}}</p>
+                               {% if i.notice_document %}
+                            <a href="{{ i.notice_document.url }}" class="btn btn-primary"> Know More </a>
+                                {% endif %}
+                        </div>
+                     </div>
+                  </div>
+               {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+              </div>
+              <div class="carousel-item" >
+               {% endif %}
+                  {% endfor %}
+              </div>
+            </div>
+       </div>
+    <!-- left and right controls for the slide -->
+        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+ {% endfor %}
+
+</div>
+{% endblock %}

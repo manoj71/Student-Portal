@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lostitems.apps.LostitemsConfig',
+    'exam.apps.ExamConfig',
+    'fee.apps.FeeConfig',
+    'club.apps.ClubConfig',
     'notes.apps.NotesConfig',
 ]
 

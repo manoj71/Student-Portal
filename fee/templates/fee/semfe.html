@@ -1,0 +1,33 @@
+{% extends 'fee/basic.html' %}
+{% block css %}
+
+ {% endblock %}
+
+{% block body %}
+{% load static %}
+ <div style="background-color: #004f99;" class="jumbotron p-4 p-md-5 text-white rounded bg-darkblue">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 ">Fees</h1>
+    </div>
+  </div>
+<div class="container">
+    <table class="table">
+        <thead style="background-color:  #1a90ff;">
+        <tr>
+            <th scope="col" style="text-align:center; color:white;">What you are looking for ?</th>
+        </tr>
+        </thead>
+
+        {% for feesem, range in allProds %}
+        <tbody>
+        <tr>
+            <td style="background-color:  #f2f2f2">
+                <a style=" color:black;" href="/fee/FP/checkout"> {{feesem.0.typee}} </a>  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;
+
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

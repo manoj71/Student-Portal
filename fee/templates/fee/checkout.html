@@ -1,0 +1,60 @@
+{% extends 'fee/basic.html' %}
+{% block title%} Checkout - My Awesome Cart{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+        <h2>IIIT Sonepat- Fees Payment</h2>
+          <div class="my-4">
+            <ul class="list-group" id="items">
+            </ul>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mt-3">
+                      <li class="breadcrumb-item active" aria-current="page"><b>Enter details: </b></li>
+                  </ol>
+              </nav>
+    </div>
+    <div class="col my-4">
+        <form method="post" action="/fee/FP/checkout/">{% csrf_token %}
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
+              </div>
+                <div class="form-group col-md-6">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone">
+                </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="rollnumber">Roll Number</label>
+                <input type="text" class="form-control" id="rollnumber" name="rollnumber" placeholder="11011976">
+              </div>
+                <div class="form-group col-md-6">
+                <label for="branchyear">Branch & Year</label>
+                <input type="text" class="form-control" id="branchyear" name="branchyear" placeholder="CSE2018-19">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="amount">Amount</label>
+                <input type="number" class="form-control" id="amount" name="amount" placeholder="69900">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Make Payment</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
