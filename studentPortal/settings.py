@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lostitems.apps.LostitemsConfig',
     'exam.apps.ExamConfig',
+    'home.apps.HomeConfig',
     'fee.apps.FeeConfig',
     'club.apps.ClubConfig',
     'notes.apps.NotesConfig',

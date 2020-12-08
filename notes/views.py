@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import NoteSubject, DAANotes, DSDNotes
 from math import ceil
-
+from home.views import getk
 
 def notes(request):
     allProds = []
@@ -12,7 +12,11 @@ def notes(request):
         n = len(prod)
         allProds.append([prod, range(1, n)])
     params = {'allProds':allProds}
-    return render(request, 'notes/notes.html',params)
+    user=getk(request)
+    if user is not None:
+        return render(request, 'notes/notes.html',params)
+    else:
+        return render(request,'log2home.html')    
     
 
 def DAA(request):

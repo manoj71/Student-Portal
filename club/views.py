@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Group, Groupnotices
 from math import ceil
-
+from home.views import getk
 
 def club(request):
     allProds = []
@@ -13,7 +13,11 @@ def club(request):
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         allProds.append([prod, range(1, nSlides)])
     params = {'allProds':allProds}
-    return render(request, 'club/clubs.html',params)
+    user=getk(request)
+    if user is not None:
+        return render(request, 'club/clubs.html',params)
+    else:
+        return render(request,'log2home.html')   
 
 def clubnotices(request):
     allProds = []

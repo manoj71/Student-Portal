@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import item
+from home.views import getk
 # Create your views here
 def lost_items(request):
     if request.method=='POST':
@@ -10,9 +11,16 @@ def lost_items(request):
         itm.item_pic=request.POST.get('item_pic')
         itm.save()
         items=item.objects.all()
-
-        return render(request,'lost_items_section.html',{'items':items})
+        user=getk(request)
+        if user is not None:
+            return render(request,'lost_items_section.html',{'items':items})
+        else:
+            return render(request,'log2home.html')    
 
     else:
         items=item.objects.all()
-        return render(request,'lost_items_section.html',{'items':items})
+        user=getk(request)
+        if user is not None:
+            return render(request,'lost_items_section.html',{'items':items})
+        else:
+            return render(request,'log2home.html')    

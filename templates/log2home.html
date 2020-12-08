@@ -11,10 +11,7 @@
 
     <title>Welcome to IIITS</title>
   </head>
-
-
   <body>
-
 
                      <!-- Navigation Bar -->
 
@@ -94,32 +91,9 @@
   </a>
 </div>
 
-
-            <!-- Sign In Form -->
-
-
-
-    <form class="form-signin w-25 p-3 my-5 mx-auto"  method="post">
-    {% csrf_token %}
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Roll Number</label>
-  <input id="inputEmail" class="form-control" name="rollnumber" placeholder="Roll Number" required="" autofocus="">
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control my-3" name="password" placeholder="Password" required="">
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-</form>
-<div>
-        {% for message in messages %}
-        <h3>{{message}}</h3>
-        {% endfor %}
-    </div>
-
-
+<div class="container" style="position:relative; top:100px;">
+<a href="/"><button type="button" class="btn btn-primary">LOGIN TO CONTINUE</button></a>
+</div>
 
 
 
