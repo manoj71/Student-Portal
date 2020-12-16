@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from .models import student
+from home.views import getk
 # Create your views here.
 def exams(request):
-    #request.session['user']=11911071
-    #user=request.session.get('user')
-    #user=getk(request)
-    #if(user==None):
-      #user=11911076
+    user=getk(request)
+    if(user==None):
+      user=0
 
     #del request.session['user']
-    stud=student.objects.get(roll_number__exact=11911076)
+    stud=student.objects.get(roll_number__exact=user)
     studs=student.objects.filter(roll_number=11911073).values('Subject_1','Subject_1_marks')
     stud_subj={
         "subject_1":stud.Subject_1,
