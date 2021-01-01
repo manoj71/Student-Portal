@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'complain.apps.ComplainConfig',
     'lostitems.apps.LostitemsConfig',
     'exam.apps.ExamConfig',
     'home.apps.HomeConfig',

@@ -1,0 +1,78 @@
+{% extends 'basic.html' %}
+{% block css %}
+
+ {% endblock %}
+
+{% block body %}
+{% load static %}
+ <div style="background-color: #004f99;" class="jumbotron p-3 p-md-4 text-white rounded bg-darkblue">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 ">Contact Us</h1>
+    </div>
+  </div>
+<div class="container">
+    <div class="col my-4">
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mt-3">
+                      <li class="breadcrumb-item active" aria-current="page"><b>Write to Us: </b></li>
+                  </ol>
+              </nav>
+    </div>
+    <div class="col my-4">
+        <form method="post" action="/complain/">{% csrf_token %}
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="branchyear">Branch & Year</label>
+                <input type="text" class="form-control" id="branchyear" name="branchyear" placeholder="CSE2018-19">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone"> <br>
+                Complain:<input type="radio" name="querytype" value="COMPLAIN"></br>
+                Enquiry:&nbsp;&nbsp;&nbsp;<input type="radio" name="querytype" value="ENQUIRY"></br>
+                 <br> <label for="querysub">Subject</label>
+                <input type="text" class="form-control" id="querysub" name="querysub">
+                </div>
+              <div class="form-group col-md-6">
+                <label for="querydesc">Explain:</label>
+                <textarea class="form-control" id="querydesc" name="querydesc"  rows="9"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<script>
+{% if thank %}
+alert('Thanks for contacting us. We wil reply soon.!');
+document.location = "/complain/";
+{%endif%}
+</script>
+
+{% endblock %}
+{%block js%}
+<script>
+{% if thank %}
+alert('Thanks for contacting us. We wil reply soon.!');
+document.location = "/complain/";
+{%endif%}
+</script>
+{% endblock %}
+
+
+
+
