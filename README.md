@@ -5,6 +5,7 @@
   <li>Python3 <</li>
   <li>Django</li>
   <li>pycryptodome</li>
+  <li>Python Pillow 8.0.0<</li>
 </ul>
 <h2>Sample Login</h2>
 <span>Roll Number = 1</span></br>
